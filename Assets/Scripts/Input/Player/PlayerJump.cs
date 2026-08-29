@@ -6,6 +6,7 @@ public class PlayerJump : MonoBehaviour
 {
     [SerializeField] KeyCode jump;
     [SerializeField] float jumpForce;
+    [SerializeField] FeetCollision feetCol;
     Rigidbody2D rb;
 
     void Start()
@@ -15,7 +16,7 @@ public class PlayerJump : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(jump))
+        if (Input.GetKeyDown(jump) && feetCol.isGrounded)
         {
             rb.AddForce(Vector2.up * jumpForce);
         }
