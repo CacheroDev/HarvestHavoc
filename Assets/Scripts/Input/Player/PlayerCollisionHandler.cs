@@ -23,8 +23,8 @@ public class PlayerCollisionHandler : MonoBehaviour
         collision.gameObject.GetComponent<ISpikeHead>()?.SpikeEjection();
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    collision.gameObject.GetComponent<IDeadZone>()?.PlayerDead();
-    //}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        collision.gameObject.GetComponent<IDeadZone>()?.DeadPlayer();
+    }
 }
