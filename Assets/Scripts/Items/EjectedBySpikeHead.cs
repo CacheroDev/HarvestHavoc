@@ -5,12 +5,14 @@ using UnityEngine;
 public class EjectedBySpikeHead : MonoBehaviour, ISpikeHead
 {
     [SerializeField] GameObject player;
-    [SerializeField] bool tossPlayer;
+    [SerializeField] bool collisionEnabler;
+    [SerializeField] float forceMultiplier;
     BoxCollider2D boxCol;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        collisionEnabler = true;
         boxCol = GetComponent<BoxCollider2D>();
     }
 
@@ -22,13 +24,34 @@ public class EjectedBySpikeHead : MonoBehaviour, ISpikeHead
     public void SpikeEjection()
     {
         Debug.Log("Spikehead collision");
-        StartCoroutine(PlayerToss());
+        if (collisionEnabler)
+        {
+            collisionEnabler = false;
+            StartCoroutine(CollisionSequence());
+        }    
     }
 
-    IEnumerator PlayerToss()
+
+    IEnumerator CollisionSequence()
     {
-        
-        player.GetComponent<Rigidbody2D>().velocity = new Vector2(7, player.GetComponent<Rigidbody2D>().velocity.y);
-        Debug.Log("Pu talsik"); yield return new WaitForSeconds(1);
+        player.GetComponent<PlayerMovement>().enabled = false;
+        boxCol.enabled = false;
+
+        if (player.transform.position.x - transform.position.x > 0)
+        {
+            //Toss player to the right
+            player.GetComponent<Rigidbody2D>().velocity = new Vector2(forceMultiplier, player.GetComponent<Rigidbody2D>().velocity.y); 
+        }
+        else
+        {
+            //Toss player to the left
+            player.GetComponent<Rigidbody2D>().velocity = new Vector2(-forceMultiplier, player.GetComponent<Rigidbody2D>().velocity.y); 
+        }
+
+        yield return new WaitForSeconds(1);
+
+        player.GetComponent<PlayerMovement>().enabled = true;
+        boxCol.enabled = true;
+        collisionEnabler = true;
     }
 }
