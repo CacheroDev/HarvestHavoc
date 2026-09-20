@@ -39,7 +39,6 @@ public class DoorOpener : MonoBehaviour, IDoor
         yield return new WaitForSeconds(duration);
         anim.Play("DoorOpens");            //Animate door
                                            //Play door opens sfx 
-                                           //Proceed to next scene
         yield return new WaitForSeconds(duration);
         yield return new WaitForSeconds(duration);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
