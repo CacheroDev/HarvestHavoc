@@ -23,7 +23,7 @@ public class EjectedBySpikeHead : MonoBehaviour, ISpikeHead
 
     public void SpikeEjection()
     {
-        Debug.Log("Spikehead collision");
+        //Debug.Log("Spikehead collision");
         if (collisionEnabler)
         {
             collisionEnabler = false;

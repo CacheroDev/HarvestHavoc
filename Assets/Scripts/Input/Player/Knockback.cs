@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Knockback : MonoBehaviour
 {
-    [SerializeField] GameObject obstacle;
     [SerializeField] float forceMultiplier;
-
     [SerializeField] public bool isKnocked;
     [SerializeField] public string direction;
 
@@ -15,7 +13,6 @@ public class Knockback : MonoBehaviour
 
     void Start()
     {
-        obstacle = GameObject.FindGameObjectWithTag("Obstacle");
         playerMovement = GetComponent<PlayerMovement>();
         rb = GetComponent<Rigidbody2D>();
     }
