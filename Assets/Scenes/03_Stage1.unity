@@ -2161,7 +2161,7 @@ GameObject:
   - component: {fileID: 296074637}
   m_Layer: 0
   m_Name: LampOn (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2617,7 +2617,7 @@ RectTransform:
   - {fileID: 724084288}
   - {fileID: 1390463311}
   - {fileID: 389051493}
-  - {fileID: 1625949442}
+  - {fileID: 2107303748}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2637,7 +2637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b02bb69d19d6d49a9581a5c42627d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetButton: {fileID: 1625949441}
+  resetButton: {fileID: 2107303745}
   player: {fileID: 0}
 --- !u!1 &526211887
 GameObject:
@@ -3104,7 +3104,7 @@ Transform:
   m_GameObject: {fileID: 683397492}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.5, y: 0.1, z: 0}
+  m_LocalPosition: {x: 8.5, y: 0.1, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3700,6 +3700,8 @@ GameObject:
   - component: {fileID: 1054732481}
   - component: {fileID: 1054732482}
   - component: {fileID: 1054732483}
+  - component: {fileID: 1054732484}
+  - component: {fileID: 1054732485}
   m_Layer: 0
   m_Name: Princess
   m_TagString: Player
@@ -3910,6 +3912,33 @@ MonoBehaviour:
   updateHPUI: 0
   readyToReset: 0
   reloadActiveScene: 0
+  changeColor: 0
+--- !u!114 &1054732484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054732474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de72c8b62e2e3d4d8a4f9d3a3d579bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHP: {fileID: 0}
+--- !u!114 &1054732485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054732474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1080af93378ecf84fa2d938cb9bbc5bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disable: 0
 --- !u!1 &1060071146
 GameObject:
   m_ObjectHideFlags: 0
@@ -5290,7 +5319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1625949442
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5298,13 +5327,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625949441}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 526211888}
-  m_Father: {fileID: 444954299}
+  m_Father: {fileID: 2107303748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5656,7 +5685,7 @@ GameObject:
   - component: {fileID: 1713069559}
   m_Layer: 0
   m_Name: LampOn
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6084,7 +6113,7 @@ GameObject:
   - component: {fileID: 1745930140}
   m_Layer: 0
   m_Name: LampOn (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6285,7 +6314,7 @@ GameObject:
   - component: {fileID: 1820289313}
   m_Layer: 0
   m_Name: LampsOn
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6538,7 +6567,7 @@ GameObject:
   - component: {fileID: 1963824714}
   m_Layer: 0
   m_Name: LampOn (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6924,7 +6953,7 @@ Transform:
   m_GameObject: {fileID: 2017713526}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.11, y: -3.21, z: 0}
+  m_LocalPosition: {x: -12.11, y: -4.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6963,6 +6992,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9311b00754283242a15386bdfc898dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+--- !u!1 &2107303745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2107303748}
+  - component: {fileID: 2107303747}
+  - component: {fileID: 2107303746}
+  m_Layer: 5
+  m_Name: Black_Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &2107303746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107303745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2107303747
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107303745}
+  m_CullTransparentMesh: 1
+--- !u!224 &2107303748
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107303745}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1625949442}
+  m_Father: {fileID: 444954299}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 330, y: 130}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2119428088
 GameObject:
   m_ObjectHideFlags: 0
@@ -7057,6 +7163,16 @@ Tilemap:
   m_GameObject: {fileID: 2119428088}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: -12, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -11, y: -6, z: 0}
     second:
       serializedVersion: 2
@@ -7689,13 +7805,13 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 63
+  - m_RefCount: 64
     m_Data: {fileID: 11400000, guid: 762fdd0c45cbf6849a3433717c7dca5f, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 63
+  - m_RefCount: 64
     m_Data: {fileID: -1313838620, guid: 964b0f21e968a9e46a6cdae58cf1c184, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 63
+  - m_RefCount: 64
     m_Data:
       e00: 1
       e01: 0
@@ -7714,13 +7830,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 63
+  - m_RefCount: 64
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -11, y: -6, z: 0}
-  m_Size: {x: 63, y: 6, z: 1}
+  m_Origin: {x: -12, y: -6, z: 0}
+  m_Size: {x: 64, y: 6, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -7781,9 +7897,9 @@ CompositeCollider2D:
     m_ColliderPaths:
     - - X: 520000000
         Y: -50000000
-      - X: -110000000
+      - X: -120000000
         Y: -50000000
-      - X: -110000000
+      - X: -120000000
         Y: -60000000
       - X: 520000000
         Y: -60000000
@@ -7791,8 +7907,8 @@ CompositeCollider2D:
     m_Paths:
     - - {x: 51.999973, y: -6}
       - {x: 51.999973, y: -5}
-      - {x: -11, y: -5.000029}
-      - {x: -10.99997, y: -6}
+      - {x: -12, y: -5.000029}
+      - {x: -11.99997, y: -6}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0

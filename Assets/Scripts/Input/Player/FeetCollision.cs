@@ -26,4 +26,12 @@ public class FeetCollision : MonoBehaviour
             isGrounded = false;
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+        }
+    }
 }

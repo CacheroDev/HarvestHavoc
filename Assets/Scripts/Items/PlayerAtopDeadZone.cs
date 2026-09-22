@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerAtopDeadZone : MonoBehaviour, IDeadZone
 {
+    [SerializeField] GameObject player;
     
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
@@ -17,7 +18,13 @@ public class PlayerAtopDeadZone : MonoBehaviour, IDeadZone
 
     public void DeadPlayer()
     {
-        Debug.Log("Player blinks, deact movement and jump, hp--, return to origPos");
+        player.GetComponent<DisablePlayer>().disable = true;
+        StartCoroutine(DeadzoneSequence());
     }
 
+    IEnumerator DeadzoneSequence()
+    {
+        yield return new WaitForSeconds(2);
+        player.transform.position = Vector2.zero;
+    }
 }

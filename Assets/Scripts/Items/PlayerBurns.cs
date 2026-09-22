@@ -21,22 +21,17 @@ public class PlayerBurns : MonoBehaviour, IFire
 
     public void BurningPlayer()
     {
-        //Debug.Log("Player on fire. Player blinks. hp--");
         if (burnEnabler)
         {
             burnEnabler = false;
-            player.GetComponent<PlayerHP>().decreaseHP = true; //Debug.Log("Hp--");
+            player.GetComponent<PlayerHP>().decreaseHP = true; 
             StartCoroutine(BurningSequence());
         }
     }
 
     IEnumerator BurningSequence()
     {
-        Color playerColor = player.GetComponent<SpriteRenderer>().color;
-        playerColor = new Color(playerColor.r, playerColor.b, playerColor.g, 0.2f);
-            
-
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         burnEnabler = true;
     }
 }

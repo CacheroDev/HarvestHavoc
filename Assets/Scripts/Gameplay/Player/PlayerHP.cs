@@ -9,12 +9,14 @@ public class PlayerHP : MonoBehaviour
     [SerializeField] public bool updateHPUI;
     [SerializeField] bool readyToReset;
     [SerializeField] public bool reloadActiveScene;
+    [SerializeField] public bool changeColor;
 
     void Start()
     {
         decreaseHP = false;
         updateHPUI = false;
         readyToReset = true;
+        changeColor = false;
     }
 
     void Update()
@@ -23,13 +25,14 @@ public class PlayerHP : MonoBehaviour
         {
             decreaseHP = false;
             updateHPUI = true;
+            changeColor = true;
             LoseALife();
         }
         if (playerHP < 1 && readyToReset)
         {
             readyToReset = false;
             reloadActiveScene = true;
-            Debug.Log("Reset stage");
+            //Debug.Log("Reset stage");
         }
     }
 

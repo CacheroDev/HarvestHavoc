@@ -15,6 +15,8 @@ public class StrawberryAdded : MonoBehaviour, IStrawberry
     }
     public void AddStrawberry()
     {
-        Debug.Log("Strawberry plus");
+        SuperObject.instance.fruit++;
+        //Debug.Log("Strawberry plus");
+        Destroy(gameObject);
     }
 }
