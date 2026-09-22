@@ -21,10 +21,11 @@ public class PlayerBurns : MonoBehaviour, IFire
 
     public void BurningPlayer()
     {
-        Debug.Log("Player on fire. Player blinks. hp--");
+        //Debug.Log("Player on fire. Player blinks. hp--");
         if (burnEnabler)
         {
             burnEnabler = false;
+            player.GetComponent<PlayerHP>().decreaseHP = true; //Debug.Log("Hp--");
             StartCoroutine(BurningSequence());
         }
     }
@@ -36,5 +37,6 @@ public class PlayerBurns : MonoBehaviour, IFire
             
 
         yield return new WaitForSeconds(1);
+        burnEnabler = true;
     }
 }

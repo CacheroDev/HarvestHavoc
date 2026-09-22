@@ -11,7 +11,7 @@ public class DoorOpener : MonoBehaviour, IDoor
     [SerializeField] public bool keyInHand;
     [SerializeField] float duration;
     [SerializeField] TextMeshProUGUI centerText;
-    [SerializeField] GameObject centerTextHolder;
+    [SerializeField] GameObject centerBoxHolder;
     Animator anim;
 
     void Start()
@@ -51,10 +51,10 @@ public class DoorOpener : MonoBehaviour, IDoor
 
     IEnumerator CenterTextPrompt()
     {
-        centerTextHolder.SetActive(true);
+        centerBoxHolder.SetActive(true);
         centerText.text = "Find the key";
         yield return new WaitForSeconds(2);
-        centerTextHolder.SetActive(false);
+        centerBoxHolder.SetActive(false);
         centerText.text = "";
     }
 }
