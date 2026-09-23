@@ -7,11 +7,13 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] KeyCode jump;
     [SerializeField] float jumpForce;
     [SerializeField] FeetCollision feetCol;
+    [SerializeField] public bool isJumping;
     Rigidbody2D rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        isJumping = false;
     }
 
     void Update()
