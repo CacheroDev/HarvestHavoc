@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d3c73b2db0b0054da8df958cc734b00, type: 3}
   m_Name: SuperManager
   m_EditorClassIdentifier: 
-  HP: 0
-  score: 0
+  fruit: 0
   tellStory: 0
   bossHP: 0

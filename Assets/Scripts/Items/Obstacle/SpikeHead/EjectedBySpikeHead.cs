@@ -28,6 +28,7 @@ public class EjectedBySpikeHead : MonoBehaviour, ISpikeHead
         {
             collisionEnabler = false;
             player.GetComponent<Knockback>().isKnocked = true;
+            player.GetComponent<PlayerHP>().decreaseHP = true;
             if (transform.position.x - player.transform.position.x > 0)
             {
                 player.GetComponent<Knockback>().direction = "left";

@@ -30,9 +30,12 @@ public class PlayerHP : MonoBehaviour
         }
         if (playerHP < 1 && readyToReset)
         {
+            Debug.Log("Reset stage");
             readyToReset = false;
+            GetComponent<PlayerMovement>().enabled = false;
+            GetComponent<PlayerJump>().enabled = false;
             reloadActiveScene = true;
-            //Debug.Log("Reset stage");
+            
         }
     }
 
