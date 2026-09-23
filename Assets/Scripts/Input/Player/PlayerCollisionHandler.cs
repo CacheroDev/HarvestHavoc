@@ -25,6 +25,6 @@ public class PlayerCollisionHandler : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        collision.gameObject.GetComponent<IDeadZone>()?.DeadPlayer();
+        collision.gameObject.GetComponent<IDeadZone>()?.DeadZoneEffect();
     }
 }

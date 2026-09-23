@@ -23,7 +23,9 @@ public class DisablePlayer : MonoBehaviour
     IEnumerator DisableSequence()
     {
         GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<PlayerJump>().enabled = false;
         yield return new WaitForSeconds(2);
         GetComponent<PlayerMovement>().enabled = true;
+        GetComponent<PlayerJump>().enabled = true;
     }
 }

@@ -18,8 +18,8 @@ public class ResetButtonActivator : MonoBehaviour
         if (player.GetComponent<PlayerHP>().reloadActiveScene)
         {
             player.GetComponent<PlayerHP>().reloadActiveScene = false;
-            player.GetComponent<PlayerMovement>().enabled = false;
-            player.GetComponent<PlayerJump>().enabled = false;
+            //player.GetComponent<PlayerMovement>().enabled = false;
+            //player.GetComponent<PlayerJump>().enabled = false;
             resetButton.SetActive(true);
         }
     }

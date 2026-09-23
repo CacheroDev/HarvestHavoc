@@ -10,6 +10,7 @@ public class PlayerHP : MonoBehaviour
     [SerializeField] bool readyToReset;
     [SerializeField] public bool reloadActiveScene;
     [SerializeField] public bool changeColor;
+    [SerializeField] GameObject player;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class PlayerHP : MonoBehaviour
         updateHPUI = false;
         readyToReset = true;
         changeColor = false;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
@@ -30,20 +32,25 @@ public class PlayerHP : MonoBehaviour
         }
         if (playerHP < 1 && readyToReset)
         {
-            Debug.Log("Reset stage");
             readyToReset = false;
-            GetComponent<PlayerMovement>().enabled = false;
-            GetComponent<PlayerJump>().enabled = false;
+            Debug.Log("0 life");
+            player.GetComponent<DisablePlayer>().disable = true;
             reloadActiveScene = true;
-            
         }
     }
 
     void LoseALife()
     {
+        Debug.Log("Lose a life");
         if (playerHP > 0)
         {
-            playerHP--;
+            playerHP--; Debug.Log("enough life");
         }
+        //else
+        //{
+        //    Debug.Log("0 life");
+        //    player.GetComponent<DisablePlayer>().disable = true;
+        //    //reloadActiveScene = true;
+        //}
     }
 }

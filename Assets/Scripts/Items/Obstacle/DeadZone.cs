@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAtopDeadZone : MonoBehaviour, IDeadZone
+public class DeadZone : MonoBehaviour, IDeadZone
 {
     [SerializeField] GameObject player;
     
@@ -16,9 +16,11 @@ public class PlayerAtopDeadZone : MonoBehaviour, IDeadZone
         
     }
 
-    public void DeadPlayer()
+    public void DeadZoneEffect()
     {
         player.GetComponent<DisablePlayer>().disable = true;
+        //deadzone prompt
+        player.GetComponent<PlayerHP>().decreaseHP = true;
         StartCoroutine(DeadzoneSequence());
     }
 

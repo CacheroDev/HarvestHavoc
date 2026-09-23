@@ -36,22 +36,31 @@ public class PrincessAnimWithAttack : MonoBehaviour
         }
 
         //Animation
-        //if (throwStrawberry.attack)
-        //{
-        //    anim.Play("Attack");
-        //}
-        //else 
-        if (jump.isJumping || !feetCol.isGrounded)
-        {
-            anim.Play("PrincessJump");
-        }
-        else if (movement.isRunning)
-        {
-            anim.Play("PrincessRun");
-        }
-        else
+
+        if (!movement.enabled)
         {
             anim.Play("PrincessIdle");
         }
+        else
+        {
+            //if (throwStrawberry.attack)
+            //{
+            //    anim.Play("Attack");
+            //}
+            //else 
+            if (jump.isJumping || !feetCol.isGrounded)
+            {
+                anim.Play("PrincessJump");
+            }
+            else if (movement.isRunning)
+            {
+                anim.Play("PrincessRun");
+            }
+            else
+            {
+                anim.Play("PrincessIdle");
+            }
+        }
+        
     }
 }
