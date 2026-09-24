@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-using UnityEngine.UI;
+//using UnityEngine.UI;
 
 public class DoorOpener : MonoBehaviour, IDoor
 {
     [SerializeField] GameObject player;
     [SerializeField] public bool keyInHand;
     [SerializeField] float duration;
-    [SerializeField] TextMeshProUGUI centerText;
-    [SerializeField] GameObject centerBoxHolder;
+    //[SerializeField] TextMeshProUGUI centerText;
+    //[SerializeField] GameObject centerBoxHolder;
+    [SerializeField] public bool findTheKey;
     [SerializeField] SoundFX sfx;
     Animator anim;
 
@@ -35,8 +36,9 @@ public class DoorOpener : MonoBehaviour, IDoor
         }
         else
         {
+            findTheKey = true;
+            sfx.PlaySFX(sfx.oneShortLowStep);
             Debug.Log("Find key");
-            StartCoroutine(CenterTextPrompt());
         }    
     }
 
@@ -48,15 +50,5 @@ public class DoorOpener : MonoBehaviour, IDoor
         yield return new WaitForSeconds(duration);
         yield return new WaitForSeconds(duration);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
-    IEnumerator CenterTextPrompt()
-    {
-        sfx.PlaySFX(sfx.oneShortLowStep);
-        centerBoxHolder.SetActive(true);
-        centerText.text = "Find the key";
-        yield return new WaitForSeconds(2);
-        centerBoxHolder.SetActive(false);
-        centerText.text = "";
     }
 }

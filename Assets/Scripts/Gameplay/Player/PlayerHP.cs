@@ -8,17 +8,20 @@ public class PlayerHP : MonoBehaviour
     [SerializeField] public bool decreaseHP;
     [SerializeField] public bool updateHPUI;
     [SerializeField] bool readyToReset;
-    [SerializeField] public bool reloadActiveScene;
+    [SerializeField] public bool activateResetButton;
     [SerializeField] public bool changeColor;
-    [SerializeField] GameObject player;
+    [SerializeField] public bool gameIsOver;
+    //[SerializeField] CapsuleCollider2D capsuleCol;
 
     void Start()
     {
         decreaseHP = false;
         updateHPUI = false;
         readyToReset = true;
+        activateResetButton = false;
         changeColor = false;
-        player = GameObject.FindGameObjectWithTag("Player");
+        gameIsOver = false;
+        //capsuleCol = GetComponent<CapsuleCollider2D>();
     }
 
     void Update()
@@ -34,8 +37,9 @@ public class PlayerHP : MonoBehaviour
         {
             readyToReset = false;
             Debug.Log("0 life");
-            player.GetComponent<DisablePlayer>().disable = true;
-            reloadActiveScene = true;
+            gameObject.GetComponent<DisablePlayer>().fullDisable = true;
+            activateResetButton = true;
+            gameIsOver = true;
         }
     }
 
@@ -44,13 +48,7 @@ public class PlayerHP : MonoBehaviour
         Debug.Log("Lose a life");
         if (playerHP > 0)
         {
-            playerHP--; Debug.Log("enough life");
+            playerHP--; //Debug.Log("enough life");
         }
-        //else
-        //{
-        //    Debug.Log("0 life");
-        //    player.GetComponent<DisablePlayer>().disable = true;
-        //    //reloadActiveScene = true;
-        //}
     }
 }
