@@ -5,10 +5,12 @@ using UnityEngine;
 public class DeadZone : MonoBehaviour, IDeadZone
 {
     [SerializeField] GameObject player;
+    [SerializeField] SoundFX sfx;
     
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        sfx = GameObject.FindGameObjectWithTag("SFX").GetComponent<SoundFX>();
     }
 
     void Update()
@@ -21,6 +23,7 @@ public class DeadZone : MonoBehaviour, IDeadZone
         player.GetComponent<DisablePlayer>().disable = true;
         //deadzone prompt
         player.GetComponent<PlayerHP>().decreaseHP = true;
+        sfx.PlaySFX(sfx.fire);
         StartCoroutine(DeadzoneSequence());
     }
 

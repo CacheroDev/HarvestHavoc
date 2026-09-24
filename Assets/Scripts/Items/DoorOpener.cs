@@ -52,6 +52,7 @@ public class DoorOpener : MonoBehaviour, IDoor
 
     IEnumerator CenterTextPrompt()
     {
+        sfx.PlaySFX(sfx.oneShortLowStep);
         centerBoxHolder.SetActive(true);
         centerText.text = "Find the key";
         yield return new WaitForSeconds(2);

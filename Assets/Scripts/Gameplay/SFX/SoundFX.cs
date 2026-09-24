@@ -15,6 +15,7 @@ public class SoundFX : MonoBehaviour
     public AudioClip door;
     public AudioClip victory;
     public AudioClip dead;
+    public AudioClip oneShortLowStep;
 
     private void Start()
     {

@@ -7,10 +7,12 @@ public class StrawberryAdded : MonoBehaviour, IStrawberry
 {
     [SerializeField] TextMeshProUGUI fruitText;
     [SerializeField] bool readyToAdd;
+    [SerializeField] SoundFX sfx;
 
     void Start()
     {
         readyToAdd = true;
+        sfx = GameObject.FindGameObjectWithTag("SFX").GetComponent<SoundFX>();
     }
 
     void Update()
@@ -22,6 +24,7 @@ public class StrawberryAdded : MonoBehaviour, IStrawberry
         if (readyToAdd)
         {
             readyToAdd = false;
+            sfx.PlaySFX(sfx.fruit);
             SuperObject.instance.fruit++;
             fruitText.text = $"Fruit: {SuperObject.instance.fruit}";
             Destroy(gameObject);

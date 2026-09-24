@@ -5,13 +5,14 @@ using UnityEngine;
 public class EjectedBySpikeHead : MonoBehaviour, ISpikeHead
 {
     [SerializeField] bool collisionEnabler;
-    //[SerializeField] public bool isKnocked;
+    [SerializeField] SoundFX sfx;
     [SerializeField] GameObject player;
     BoxCollider2D boxCol;
 
     void Start()
     {
         collisionEnabler = true;
+        sfx = GameObject.FindGameObjectWithTag("SFX").GetComponent<SoundFX>();
         player = GameObject.FindGameObjectWithTag("Player");
         boxCol = GetComponent<BoxCollider2D>();
     }
@@ -27,6 +28,7 @@ public class EjectedBySpikeHead : MonoBehaviour, ISpikeHead
         if (collisionEnabler)
         {
             collisionEnabler = false;
+            sfx.PlaySFX(sfx.fire);
             player.GetComponent<Knockback>().isKnocked = true;
             player.GetComponent<PlayerHP>().decreaseHP = true;
             if (transform.position.x - player.transform.position.x > 0)
@@ -45,7 +47,7 @@ public class EjectedBySpikeHead : MonoBehaviour, ISpikeHead
     IEnumerator CollisionSequence()
     {
         boxCol.enabled = false;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         boxCol.enabled = true;
         collisionEnabler = true;
     }
