@@ -12,6 +12,7 @@ public class DoorOpener : MonoBehaviour, IDoor
     [SerializeField] float duration;
     [SerializeField] TextMeshProUGUI centerText;
     [SerializeField] GameObject centerBoxHolder;
+    [SerializeField] SoundFX sfx;
     Animator anim;
 
     void Start()
@@ -43,7 +44,7 @@ public class DoorOpener : MonoBehaviour, IDoor
     {
         yield return new WaitForSeconds(duration);
         anim.Play("DoorOpens");            //Animate door
-                                           //Play door opens sfx 
+        sfx.PlaySFX(sfx.door);             //Play door opens sfx 
         yield return new WaitForSeconds(duration);
         yield return new WaitForSeconds(duration);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
