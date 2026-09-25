@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+//using TMPro;
 
 public class StrawberryAdded : MonoBehaviour, IStrawberry
 {
-    [SerializeField] TextMeshProUGUI fruitText;
+    //[SerializeField] TextMeshProUGUI fruitText;
     [SerializeField] bool readyToAdd;
     [SerializeField] SoundFX sfx;
 
@@ -26,7 +26,7 @@ public class StrawberryAdded : MonoBehaviour, IStrawberry
             readyToAdd = false;
             sfx.PlaySFX(sfx.fruit);
             SuperObject.instance.fruit++;
-            fruitText.text = $"Fruit: {SuperObject.instance.fruit}";
+            //fruitText.text = $"Fruit: {SuperObject.instance.fruit}";
             Destroy(gameObject);
         }
     }

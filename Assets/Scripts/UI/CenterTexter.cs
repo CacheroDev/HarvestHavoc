@@ -9,7 +9,7 @@ public class CenterTexter : MonoBehaviour
     [SerializeField] TextMeshProUGUI centerText;
     [SerializeField] GameObject centerBoxHolder;
     [SerializeField] GameObject player;
-
+    [SerializeField] GameObject deadzone;
 
     void Start()
     {
@@ -29,6 +29,11 @@ public class CenterTexter : MonoBehaviour
             player.GetComponent<PlayerHP>().gameIsOver = false;
             StartCoroutine(PromptForGameOver());
         }
+        if (deadzone.GetComponent<DeadZone>().prompt)
+        {
+            deadzone.GetComponent<DeadZone>().prompt = false;
+            StartCoroutine(PromptForDeadzone());
+        }
     }
 
     IEnumerator PromptForTheKey()
@@ -44,5 +49,14 @@ public class CenterTexter : MonoBehaviour
         centerBoxHolder.SetActive(true);
         centerText.text = "Game Over";
         yield return new WaitForSeconds(2);
+    }
+
+    IEnumerator PromptForDeadzone()
+    {
+        centerBoxHolder.SetActive(true);
+        centerText.text = "Deadzone";
+        yield return new WaitForSeconds(2);
+        centerBoxHolder.SetActive(false);
+        centerText.text = "";
     }
 }

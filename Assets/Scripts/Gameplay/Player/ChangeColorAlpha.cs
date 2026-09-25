@@ -19,7 +19,7 @@ public class ChangeColorAlpha : MonoBehaviour
     {
         if (playerHP.changeColor)
         {
-            playerHP.changeColor = false; Debug.Log("Change alpha");
+            playerHP.changeColor = false; //Debug.Log("Change alpha");
             StartCoroutine(ColorSequence());
         }
     }

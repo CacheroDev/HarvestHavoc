@@ -36,7 +36,7 @@ public class PlayerHP : MonoBehaviour
         if (playerHP < 1 && readyToReset)
         {
             readyToReset = false;
-            Debug.Log("0 life");
+            //Debug.Log("0 life");
             gameObject.GetComponent<DisablePlayer>().fullDisable = true;
             activateResetButton = true;
             gameIsOver = true;
@@ -45,7 +45,7 @@ public class PlayerHP : MonoBehaviour
 
     void LoseALife()
     {
-        Debug.Log("Lose a life");
+        //Debug.Log("Lose a life");
         if (playerHP > 0)
         {
             playerHP--; //Debug.Log("enough life");

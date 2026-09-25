@@ -2,11 +2,11 @@
 using UnityEngine;
 using TMPro;
 
-public class InitialFruitUI : MonoBehaviour
+public class FruitUI : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI fruitText;
 
-    void Start()
+    void Update()
     {
         fruitText.text = $"Fruit: {SuperObject.instance.fruit}";
     }

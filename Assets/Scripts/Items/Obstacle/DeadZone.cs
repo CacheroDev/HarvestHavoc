@@ -6,11 +6,13 @@ public class DeadZone : MonoBehaviour, IDeadZone
 {
     [SerializeField] GameObject player;
     [SerializeField] SoundFX sfx;
+    [SerializeField] public bool prompt;
     
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         sfx = GameObject.FindGameObjectWithTag("SFX").GetComponent<SoundFX>();
+        prompt = false;
     }
 
     void Update()
@@ -20,11 +22,14 @@ public class DeadZone : MonoBehaviour, IDeadZone
 
     public void DeadZoneEffect()
     {
-        player.GetComponent<DisablePlayer>().disable = true;
-        //deadzone prompt
         player.GetComponent<PlayerHP>().decreaseHP = true;
         sfx.PlaySFX(sfx.fire);
-        StartCoroutine(DeadzoneSequence());
+        if (player.GetComponent<PlayerHP>().playerHP > 1)
+        {
+            player.GetComponent<DisablePlayer>().disable = true;
+            prompt = true;
+            StartCoroutine(DeadzoneSequence());
+        }
     }
 
     IEnumerator DeadzoneSequence()
