@@ -9,6 +9,7 @@ TagManager:
   - Door
   - Obstacle
   - SFX
+  - MusicManager
   layers:
   - Default
   - TransparentFX
