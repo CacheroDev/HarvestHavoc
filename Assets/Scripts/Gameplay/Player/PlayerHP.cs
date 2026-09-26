@@ -11,7 +11,6 @@ public class PlayerHP : MonoBehaviour
     [SerializeField] public bool activateResetButton;
     [SerializeField] public bool changeColor;
     [SerializeField] public bool gameIsOver;
-    //[SerializeField] CapsuleCollider2D capsuleCol;
 
     void Start()
     {
@@ -36,10 +35,11 @@ public class PlayerHP : MonoBehaviour
         if (playerHP < 1 && readyToReset)
         {
             readyToReset = false;
-            //Debug.Log("0 life");
+            Debug.Log("0 life");
             gameObject.GetComponent<DisablePlayer>().fullDisable = true;
             activateResetButton = true;
             gameIsOver = true;
+            readyToReset = true;
         }
     }
 
