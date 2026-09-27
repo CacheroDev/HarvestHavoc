@@ -10,12 +10,13 @@ public class SoundFX : MonoBehaviour
     [Header("------ Audio Clip------")]
     public AudioClip fruit;
     public AudioClip fire;
-    public AudioClip rock;
     public AudioClip key;
     public AudioClip door;
     public AudioClip victory;
     public AudioClip dead;
     public AudioClip oneShortLowStep;
+    public AudioClip footStep;
+    public AudioClip dropFruit;
 
     private void Start()
     {

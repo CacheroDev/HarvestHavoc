@@ -10,6 +10,7 @@ TagManager:
   - Obstacle
   - SFX
   - MusicManager
+  - Fruit
   layers:
   - Default
   - TransparentFX
